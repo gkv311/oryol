@@ -54,7 +54,14 @@ glfwDisplayMgr::SetupDisplay(const GfxSetup& setup, const gfxPointers& ptrs) {
     glfwSetErrorCallback(glfwErrorCallback);
     
     // setup the GLFW main window
-    this->createMainWindow(setup);
+    if (setup.NativeWindow != NULL)
+    {
+      glfwDisplayMgr::glfwWindow = (GLFWwindow* )setup.NativeWindow;
+    }
+    else
+    {
+      this->createMainWindow(setup);
+    }
     
     // and make the window's GL context current
     glfwMakeContextCurrent(glfwWindow);

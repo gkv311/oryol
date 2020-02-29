@@ -1162,6 +1162,8 @@ public:
     int MaxDrawCallsPerFrame = GfxConfig::DefaultMaxDrawCallsPerFrame;
     /// max number of ApplyDrawState per frame (only relevant on some platforms)
     int MaxApplyDrawStatesPerFrame = GfxConfig::DefaultMaxApplyDrawStatesPerFrame;
+    /// pointer to native window
+    void* NativeWindow = NULL;
     /// get DisplayAttrs object initialized to setup values
     DisplayAttrs GetDisplayAttrs() const;
     /// default constructor
